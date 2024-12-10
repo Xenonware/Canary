@@ -1,0 +1,16 @@
+import time
+import sys
+import psutil
+
+#outline the read function later
+#The idea is for the code to monitor system strain
+#when strain exceeds 70% alert user
+#When strain exceeds 90% ask user if they wish to continue
+#If yes continue monitoring, if no, restrart system
+#When strain exceeds 95% alert user that the canary has died and shutdown system
+#Intended to protect system from longterm damage, also just a gimmick program
+
+def system_monitor():
+    
+
+
