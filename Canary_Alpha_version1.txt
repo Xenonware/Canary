@@ -10,7 +10,17 @@ import psutil
 #When strain exceeds 95% alert user that the canary has died and shutdown system
 #Intended to protect system from longterm damage, also just a gimmick program
 
-def system_monitor():
+# CPU usage
+cpu_percent = psutil.cpu_percent(interval=1) 
+print(f"CPU Usage: {cpu_percent}%")
+
+# Memory usage
+mem = psutil.virtual_memory()
+print(f"Total Memory: {mem.total / (1024 ** 3):.2f} GB")
+print(f"Available Memory: {mem.available / (1024 ** 3):.2f} GB")
+
+if cpu_percent >= 70:
+    print("CPU strain at 70%, please be nice to your pc!")
     
 
 
