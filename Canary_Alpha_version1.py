@@ -37,10 +37,8 @@ mid_range = range(11,20) #actual is 70,90
 # Range for complete shutdown
 high_range = range(21,30) #actual is 91,100
 
-if cpu_percent in low_range:
-    low_range = True
-
 running = True #this keeps the code from shitting the bed
+
 
 def CPU_usage():
     # CPU usage
@@ -63,7 +61,6 @@ def mc(): #stands for mid check
             restart_computer()
         elif answer == "N":
             pass
-
         else:
             print("Please answer with Y or N")
 
@@ -72,6 +69,9 @@ mem = psutil.virtual_memory()
 
 while running:
     cpu_percent in low_range
+
+    if keyboard.is_pressed('esc'):
+        running = False
 
 
     CPU_usage()
